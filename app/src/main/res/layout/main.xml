@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="#ff851016"
+	android:background="#ff00b0ff"
 	android:gravity="center"
 	android:orientation="vertical"
 	android:weightSum="15.0">
@@ -23,16 +23,6 @@
 			android:gravity="center"
 			android:orientation="horizontal"
 			android:weightSum="10.0">
-
-			<ImageView
-				android:layout_width="0.0dip"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="5.0dip"
-				android:layout_marginRight="2.0dip"
-				android:layout_weight="2.0"
-				android:adjustViewBounds="true"
-				android:background="@drawable/lock_icon_bg"
-				android:src="@drawable/lock"/>
 
 			<LinearLayout
 				android:layout_width="0.0dip"
@@ -57,7 +47,7 @@
 						android:gravity="center"
 						android:paddingTop="3.0dip"
 						android:text="Оплата будет повышена"
-						android:textColor="#ffd89660"
+						android:textColor="#FF0F00"
 						android:textSize="9.0sp"/>
 
 					<TextView
@@ -117,7 +107,7 @@
 						android:gravity="center"
 						android:paddingTop="3.0dip"
 						android:text="Ваши файлы будут потеряны"
-						android:textColor="#ffd89660"
+						android:textColor="#FF0F00"
 						android:textSize="9.0sp"/>
 
 					<TextView
@@ -167,7 +157,7 @@
 				android:layout_height="wrap_content"
 				android:gravity="center"
 				android:text="Ваши файлы были зашифрованы!"
-				android:textColor="#fffadbd6"/>
+				android:textColor="#FFFFFF"/>
 
 			<ScrollView
 				android:layout_width="fill_parent"
@@ -177,21 +167,20 @@
 				<LinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:background="#fffdfdfd"
+					android:background="#FFFFFF"
 					android:orientation="vertical">
 
 					<TextView
 						android:id="@+id/bt1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:textColor="#ff000000"
+						android:textColor="#000000"
 						android:textSize="16.0sp"/>
 
 					<TextView
 						android:id="@+id/nr1"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:textColor="#ff323131"
 						android:textSize="13.0sp"/>
 
 					<TextView
@@ -199,14 +188,13 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="20.0dip"
-						android:textColor="#ff000000"
+						android:textColor="#000000"
 						android:textSize="16.0sp"/>
 
 					<TextView
 						android:id="@+id/nr2"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:textColor="#ff323131"
 						android:textSize="13.0sp"/>
 
 					<TextView
@@ -214,14 +202,13 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="20.0dip"
-						android:textColor="#ff000000"
+						android:textColor="#000000"
 						android:textSize="16.0sp"/>
 
 					<TextView
 						android:id="@+id/nr3"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:textColor="#ff323131"
 						android:textSize="13.0sp"/>
 
 					<TextView
@@ -229,7 +216,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_marginTop="20.0dip"
-						android:textColor="#ff000000"
+						android:textColor="#000000"
 						android:textSize="16.0sp"/>
 
 					<TextView
@@ -283,7 +270,7 @@
 					android:layout_height="fill_parent"
 					android:layout_marginLeft="3.0dip"
 					android:text="Свяжитесь с нами"
-					android:textColor="#ff5ea9ba"
+					android:textColor="#FF0F00"
 					android:textSize="14.0sp"
 					android:layout_weight="1"
 					android:gravity="center"/>
@@ -294,7 +281,7 @@
 					android:layout_height="fill_parent"
 					android:layout_marginLeft="10.0dip"
 					android:text="Присоединяйтесь к нам"
-					android:textColor="#ff5ea9ba"
+					android:textColor="#FF0F00"
 					android:textSize="14.0sp"
 					android:layout_weight="1"
 					android:gravity="center"/>
@@ -307,7 +294,7 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1.0"
 				android:gravity="center"
-				android:textColor="#ffd89660"
+				android:textColor="#FF7500"
 				android:textSize="11.0sp"/>
 
 			<LinearLayout
@@ -327,7 +314,6 @@
 					android:layout_weight="6.0"
 					android:background="@drawable/lock_icon_bg"
 					android:gravity="center"
-					android:textColor="#fffadbd6"
 					android:textSize="12.0sp"/>
 
 				<Button
@@ -337,7 +323,6 @@
 					android:layout_weight="2.0"
 					android:text="Копировать"
 					android:textAllCaps="false"
-					android:textColor="#ff000000"
 					android:textSize="10.0sp"/>
 
 				<Button
@@ -347,7 +332,6 @@
 					android:layout_weight="2.0"
 					android:text="Проверить оплату"
 					android:textAllCaps="false"
-					android:textColor="#ff000000"
 					android:textSize="10.0sp"/>
 
 			</LinearLayout>
@@ -380,7 +364,6 @@
 					android:enabled="false"
 					android:text="Невозможно расшифровать"
 					android:textAllCaps="false"
-					android:textColor="#ff000000"
 					android:textSize="10.0sp"/>
 
 			</LinearLayout>

