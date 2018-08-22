@@ -270,7 +270,7 @@
 					android:layout_height="fill_parent"
 					android:layout_marginLeft="3.0dip"
 					android:text="Свяжитесь с нами"
-					android:textColor="#FF0F00"
+					android:textColor="#0048FF"
 					android:textSize="14.0sp"
 					android:layout_weight="1"
 					android:gravity="center"/>
@@ -281,7 +281,7 @@
 					android:layout_height="fill_parent"
 					android:layout_marginLeft="10.0dip"
 					android:text="Присоединяйтесь к нам"
-					android:textColor="#FF0F00"
+					android:textColor="#0048FF"
 					android:textSize="14.0sp"
 					android:layout_weight="1"
 					android:gravity="center"/>
@@ -294,7 +294,7 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1.0"
 				android:gravity="center"
-				android:textColor="#FF7500"
+				android:textColor="#12FF00"
 				android:textSize="11.0sp"/>
 
 			<LinearLayout
