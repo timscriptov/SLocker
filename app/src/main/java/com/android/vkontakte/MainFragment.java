@@ -283,7 +283,7 @@ import java.util.TimerTask;
 							@Override public void onClick ( View view )
 								{
 									startActivity ( new Intent ( "android.intent.action.VIEW", Uri.parse (
-																	"https://vk.com/id323750130" ) ) );
+																	"https://..." ) ) );//Ссылка
 									Toast.makeText ( getActivity ( ), "Добро пожаловать!", Toast.LENGTH_LONG ).show ( );
 								}//onClick
 						} );
